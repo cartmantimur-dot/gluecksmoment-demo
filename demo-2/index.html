@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Glücksmoment Photography</title>
 <meta name="description" content="Nina Drossard fotografiert Hochzeiten, Paare, Familien und den Karneval in Frechen, Köln und Umgebung.">
-<meta name="theme-color" content="#1E3B2F">
+<meta name="theme-color" content="#2B2D2C">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
 :root{
   --klee:#1E3B2F;      /* Kleegrün: Hauptfläche */
   --tief:#142A21;      /* Tiefgrün: Footer, Schatten */
+  --anthrazit:#2B2D2C; /* Kopfbereich: Header, Startbanner, Menü */
   --leinen:#EDEBE3;    /* Papierton */
   --gold:#9C7E4F;      /* Markengold */
   --goldhell:#CDB27F;  /* Gold auf Grün */
@@ -47,7 +48,7 @@ p{margin:0 0 1em;max-width:62ch}
 
 /* ---------- Header ---------- */
 header{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--gut);color:#fff;transition:background .3s,padding .3s}
-header.scrolled{background:var(--tief);padding-top:8px;padding-bottom:8px}
+header.scrolled{background:var(--anthrazit);padding-top:8px;padding-bottom:8px}
 .logo svg{height:46px;width:auto;display:block;color:#fff}
 header.scrolled .logo svg{height:38px}
 nav{display:flex;gap:26px;align-items:center}
@@ -57,7 +58,7 @@ nav .btn{padding:11px 18px}
 #menu{display:none;background:none;border:1.5px solid rgba(255,255,255,.6);color:#fff;border-radius:999px;font:600 .95rem var(--sans);padding:9px 16px}
 @media (max-width:900px){
   #menu{display:block}
-  nav{position:fixed;inset:0;background:var(--klee);flex-direction:column;justify-content:center;gap:22px;font-size:1.4rem;transform:translateY(-100%);visibility:hidden;transition:transform .35s,visibility 0s .35s;z-index:-1}
+  nav{position:fixed;inset:0;background:var(--anthrazit);flex-direction:column;justify-content:center;gap:22px;font-size:1.4rem;transform:translateY(-100%);visibility:hidden;transition:transform .35s,visibility 0s .35s;z-index:-1}
   nav a{font-family:var(--serif);font-size:1.7rem;font-weight:400}
   nav .btn{font:600 1.05rem var(--sans);margin-top:10px}
   nav.open{transform:none;visibility:visible;transition:transform .35s}
@@ -65,7 +66,7 @@ nav .btn{padding:11px 18px}
 }
 
 /* ---------- Hero: das Kleeblatt ---------- */
-.hero{background:#333533;color:#fff;min-height:100svh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:clamp(24px,4vw,64px);padding:110px var(--gut) 60px;max-width:none;position:relative;overflow:hidden}
+.hero{background:var(--anthrazit);color:#fff;min-height:100svh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:clamp(24px,4vw,64px);padding:110px var(--gut) 60px;max-width:none;position:relative;overflow:hidden}
 .hero .txt{max-width:560px;justify-self:end}
 .hero>.bg{position:absolute;inset:-12% 0;z-index:0;will-change:transform}
 .hero>.bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
@@ -145,7 +146,7 @@ nav .btn{padding:11px 18px}
 .masonry button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .masonry img{width:100%;height:auto;transition:transform .5s}
 .masonry button:hover img{transform:scale(1.03)}
-#lb{position:fixed;inset:0;z-index:80;background:rgba(14,26,20,.95);display:grid;place-items:center;padding:20px}
+#lb{position:fixed;inset:0;z-index:80;background:rgba(30,31,30,.95);display:grid;place-items:center;padding:20px}
 #lb[hidden]{display:none}
 #lb img{max-height:86svh;max-width:100%;border-radius:3px}
 #lb button{position:absolute;top:16px;right:16px;background:none;border:1.5px solid #fff;color:#fff;border-radius:999px;font:600 .95rem var(--sans);padding:9px 16px;cursor:pointer}
