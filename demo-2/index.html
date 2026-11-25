@@ -65,13 +65,13 @@ nav .btn{padding:11px 18px}
 }
 
 /* ---------- Hero: das Kleeblatt ---------- */
-.hero{background:var(--klee);color:#fff;min-height:100svh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:clamp(24px,4vw,64px);padding:110px var(--gut) 60px;max-width:none;position:relative;overflow:hidden}
+.hero{background:#333533;color:#fff;min-height:100svh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:clamp(24px,4vw,64px);padding:110px var(--gut) 60px;max-width:none;position:relative;overflow:hidden}
 .hero .txt{max-width:560px;justify-self:end}
 .hero>.bg{position:absolute;inset:-12% 0;z-index:0;will-change:transform}
 .hero>.bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(20,42,33,.93) 0%,rgba(30,59,47,.8) 50%,rgba(30,59,47,.68) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(36,38,37,.93) 0%,rgba(52,54,53,.8) 50%,rgba(52,54,53,.66) 100%)}
 .hero>.txt,.hero>.clover{position:relative;z-index:2}
-@media (max-width:900px){.hero::before{background:linear-gradient(180deg,rgba(30,59,47,.7) 0%,rgba(20,42,33,.9) 62%)}}
+@media (max-width:900px){.hero::before{background:linear-gradient(180deg,rgba(52,54,53,.7) 0%,rgba(36,38,37,.9) 62%)}}
 .hero p.lead{font-size:1.15rem;color:#E3E6DE;max-width:44ch}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .clover{width:100%;max-width:min(680px,82svh);justify-self:start}
