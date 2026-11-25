@@ -47,7 +47,7 @@ p{margin:0 0 1em;max-width:62ch}
 
 /* ---------- Header ---------- */
 header{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--gut);color:#fff;transition:background .3s,padding .3s}
-header.scrolled{background:rgba(20,42,33,.97);padding-top:8px;padding-bottom:8px}
+header.scrolled{background:var(--tief);padding-top:8px;padding-bottom:8px}
 .logo svg{height:46px;width:auto;display:block;color:#fff}
 header.scrolled .logo svg{height:38px}
 nav{display:flex;gap:26px;align-items:center}
@@ -168,7 +168,9 @@ nav .btn{padding:11px 18px}
 @media (max-width:800px){
   .karneval .top{grid-template-columns:1fr}
   .prints{height:auto;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px var(--gut) 34px;margin:0 calc(var(--gut)*-1)}
-  .print{position:relative;left:auto;top:auto;flex:0 0 68%;scroll-snap-align:center;transform:rotate(var(--r))}
+  .prints{align-items:center}
+  .print{position:relative;left:auto;top:auto;flex:0 0 72%;scroll-snap-align:center;transform:rotate(var(--r))!important;width:auto}
+  .print img{aspect-ratio:4/5}
 }
 
 /* ---------- Über mich ---------- */
