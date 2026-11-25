@@ -67,6 +67,11 @@ nav .btn{padding:11px 18px}
 /* ---------- Hero: das Kleeblatt ---------- */
 .hero{background:var(--klee);color:#fff;min-height:100svh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:clamp(24px,4vw,64px);padding:110px var(--gut) 60px;max-width:none;position:relative;overflow:hidden}
 .hero .txt{max-width:560px;justify-self:end}
+.hero>.bg{position:absolute;inset:-12% 0;z-index:0;will-change:transform}
+.hero>.bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(20,42,33,.93) 0%,rgba(30,59,47,.8) 50%,rgba(30,59,47,.68) 100%)}
+.hero>.txt,.hero>.clover{position:relative;z-index:2}
+@media (max-width:900px){.hero::before{background:linear-gradient(180deg,rgba(30,59,47,.7) 0%,rgba(20,42,33,.9) 62%)}}
 .hero p.lead{font-size:1.15rem;color:#E3E6DE;max-width:44ch}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .clover{width:100%;max-width:min(680px,82svh);justify-self:start}
@@ -213,7 +218,7 @@ footer.site nav a{font-family:var(--sans);font-size:.92rem}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .leaf-in,.js .stem{animation:none;stroke-dashoffset:0}
-  .leaf,.print,.para .bg,.kontakt .bg,.pics .big img{transform:none!important}
+  .leaf,.print,.para .bg,.hero>.bg,.kontakt .bg,.pics .big img{transform:none!important}
 }
 </style>
 </head>
@@ -243,6 +248,7 @@ footer.site nav a{font-family:var(--sans);font-size:.92rem}
 
 <main id="top">
 <section class="hero" aria-labelledby="h1">
+  <div class="bg" data-par="0.25"><img src="img/see.jpg" alt="" fetchpriority="high"></div>
   <div class="txt">
     <h1 id="h1">Glück lässt sich nicht planen. Festhalten schon.</h1>
     <p class="lead">Ich bin Nina Drossard und fotografiere Hochzeiten, Paare, Familien und den Karneval in Frechen, Köln und Umgebung. Natürlich, warm und mit ganz viel Gefühl.</p>
@@ -404,7 +410,7 @@ footer.site nav a{font-family:var(--sans);font-size:.92rem}
 </section>
 
 <section class="kontakt" id="kontakt" aria-labelledby="t-kontakt">
-  <div class="bg" data-par="0.14"><img src="img/see.jpg" alt="" loading="lazy"></div>
+  <div class="bg" data-par="0.14"><img src="img/paar-park.jpg" alt="" loading="lazy" style="object-position:50% 30%"></div>
   <div class="wrap">
     <div>
       <h2 id="t-kontakt">Erzählt mir von eurem Glücksmoment.</h2>
@@ -445,7 +451,7 @@ const hd=document.getElementById('hd'),nav=document.getElementById('nav'),menu=d
 menu.onclick=()=>{const o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o);menu.textContent=o?'Schließen':'Menü'};
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded',false);menu.textContent='Menü'}));
 // Galerie
-const photos=[["kuss","Brautpaar küsst sich mit großem Rosenstrauß"],["paar-feld","Paar umarmt sich im Kornfeld"],["strauss-rosa","Brautstrauß in Rosé vor dem Kleid"],["finja","Lachendes Kleinkind"],["pampas","Brautpaar küsst sich, Strauß mit Pampasgras"],["paar-park","Paar spaziert durch einen Park"],["ringe-herz","Eheringe in einem Herz aus Blüten"],["fuesse","Babyfüße in Elternhänden"],["paar-kuss","Paar küsst sich im Abendlicht"],["strauss-korb","Rosenstrauß im Weidenkorb"],["pferd","Frau im Spitzenkleid mit ihrem Pferd"],["strauss-wild","Bunter Wiesenblumenstrauß"]];
+const photos=[["kuss","Brautpaar küsst sich mit großem Rosenstrauß"],["paar-feld","Paar umarmt sich im Kornfeld"],["strauss-rosa","Brautstrauß in Rosé vor dem Kleid"],["finja","Lachendes Kleinkind"],["pampas","Brautpaar küsst sich, Strauß mit Pampasgras"],["ringe-herz","Eheringe in einem Herz aus Blüten"],["fuesse","Babyfüße in Elternhänden"],["paar-kuss","Paar küsst sich im Abendlicht"],["strauss-korb","Rosenstrauß im Weidenkorb"],["pferd","Frau im Spitzenkleid mit ihrem Pferd"],["strauss-wild","Bunter Wiesenblumenstrauß"]];
 const m=document.getElementById('masonry'),lb=document.getElementById('lb'),lbi=document.getElementById('lbi');let last;
 photos.forEach(([f,a])=>{const b=document.createElement('button');b.setAttribute('aria-label',a+', vergrößern');b.innerHTML=`<img src="img/${f}.jpg" alt="${a}" loading="lazy">`;b.onclick=()=>{last=b;lbi.src=`img/${f}.jpg`;lbi.alt=a;lb.hidden=false;document.getElementById('lbx').focus()};m.appendChild(b)});
 const close=()=>{lb.hidden=true;last&&last.focus()};
